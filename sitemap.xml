@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/about/index.html</loc>
+    
+    <lastmod>2021-08-17</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/tags/index.html</loc>
     
     <lastmod>2021-08-17</lastmod>
@@ -43,17 +50,10 @@
     
   </url>
   
-  <url>
-    <loc>http://yoursite-url/about/index.html</loc>
-    
-    <lastmod>2016-04-20</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>http://yoursite-url/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +61,7 @@
   
   <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -70,7 +70,7 @@
   
   <url>
     <loc>http://yoursite-url/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-08-17</lastmod>
+    <lastmod>2021-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
