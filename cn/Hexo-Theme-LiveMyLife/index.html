@@ -237,9 +237,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
               
               
             </a>
@@ -248,9 +248,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
@@ -270,9 +270,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -653,13 +653,9 @@ Gitee 仓库地址：<a href="https://gitee.com/V_Vincen/hexo-theme-livemylife">
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/Leetcode509/" data-toggle="tooltip" data-placement="top" title="Leetcode509">&larr; Previous Post</a>
+            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">&larr; Previous Post</a>
           </li>
           
-          
-          <li class="next">
-            <a href="/en/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
-          </li>
           
         </ul>
 
@@ -741,7 +737,7 @@ Gitee 仓库地址：<a href="https://gitee.com/V_Vincen/hexo-theme-livemylife">
       clientSecret: '2b71165f50fcda2ae0c70b8d899adbf974d8dc28',
       repo: 'Coding-Of-Diary',
       owner: 'xmc1214',
-      admin: '',
+      admin: 'xmc1214',
       id: 'Fri Apr 17 2020 02:34:17 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
@@ -1361,5 +1357,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

@@ -237,9 +237,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              CATEGORIES
+              ARCHIVES
               
               
             </a>
@@ -248,9 +248,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              ABOUT
+              CATEGORIES
               
               
             </a>
@@ -270,9 +270,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              ARCHIVES
+              ABOUT
               
               
             </a>
@@ -628,11 +628,11 @@ This LiveMyLife theme created by Vincent modified from the original Porter YenYu
       <li>Leetcode509</li>
     </a>
     
-    <a href="../cn/Hexo-Theme-LiveMyLife/">
+    <a href="Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
-    <a href="Hexo-Theme-LiveMyLife/">
+    <a href="../cn/Hexo-Theme-LiveMyLife/">
       <li>Hexo-Theme-LiveMyLife</li>
     </a>
     
@@ -1166,5 +1166,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
