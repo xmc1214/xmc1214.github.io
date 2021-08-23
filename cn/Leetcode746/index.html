@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/about/">
+  <link rel="canonical" href="http://yoursite-url/cn/Leetcode746/">
   <title>
     
-      About - Coding Of Diary
+      Leetcode746 - Coding Of Diary
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -290,29 +290,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="about/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-      <option value="en" >
-        English
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -364,19 +342,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/pepole.png');
-      --intro-header-background-image-url-post: url('img/scenery/girl.png');
-      --intro-header-background-image-url-page: url('/img/scenery/girl.png');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/pepole.png');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/scenery/girl.png');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/scenery/girl.png');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/scenery/girl.png'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -398,10 +376,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>About</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Life is too cruel. If we cease to believe in love,why would we want to live?</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Leetcode746</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 凌非晨 on
+              2021-08-23
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">1</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">110</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -442,293 +450,244 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="题目标签">题目标签</h2>
+<p>动态规划</p>
+<h2 id="解题思路">解题思路</h2>
+<p>在70.爬楼梯的基础上引入了权重，只需在选择的时候加入即可</p>
+<h2 id="AC代码">AC代码</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">minCostClimbingStairs</span><span class="params">(cost []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">  dp := <span class="built_in">make</span>([]<span class="keyword">int</span>,<span class="built_in">len</span>(cost))</span><br><span class="line">  dp[<span class="number">0</span>],dp[<span class="number">1</span>] = cost[<span class="number">0</span>],cost[<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">for</span> i := <span class="number">2</span>; i &lt; <span class="built_in">len</span>(dp); i++ &#123;</span><br><span class="line">    dp[i] = min(dp[i - <span class="number">1</span>],dp[i - <span class="number">2</span>]) + cost[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> min(dp[<span class="built_in">len</span>(dp) - <span class="number">1</span>],dp[<span class="built_in">len</span>(dp) - <span class="number">2</span>])</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(i,j <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">  <span class="keyword">if</span> i &lt; j &#123;</span><br><span class="line">    <span class="keyword">return</span> i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> j</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/悦拍屋/" data-toggle="tooltip" data-placement="top" title="悦拍屋">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Leetcode746&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Leetcode746/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '78fff488587feb5096ce',
+      clientSecret: '2b71165f50fcda2ae0c70b8d899adbf974d8dc28',
+      repo: 'Coding-Of-Diary',
+      owner: 'xmc1214',
+      admin: 'xmc1214',
+      id: 'Mon Aug 23 2021 15:11:50 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      language: 'en'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A2%98%E7%9B%AE%E6%A0%87%E7%AD%BE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">题目标签</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">解题思路</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AC%E4%BB%A3%E7%A0%81"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">AC代码</span></a></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- ## Talk To Me
-
-> I always say to myself :
->
-> if my life is peaceful and plain sailing all the time ,
->
-> it means to die in the electrocardiogram …
-
-
-
-## Just Me
-
-<img src="/img/scenery/about_bg2.jpg" width="350" alt="about_bg2"></img>
-
-> 有一种状态 叫一个人 它总是挑战语言的贫乏 只能在某首歌中找寻灵感；
->
-> 有一种氨基酸 叫多巴胺 你不知道它何时会在你体内产生；
->
-> 有一种上瘾 叫抽烟 其实你抽的只是心情 又或是寂寞；
->
-> 有一种态度 叫纹身 其实我们只是想与众不同；
->
-> 有一种经历 叫旅行 年轻只有一次 不出去走走 或许以为眼前的就是世界；
->
-> 有一种人生 叫心电图 如果你总是一帆风顺 那么你就挂了；
->
-> 有一种悠闲 叫 " 老板给我杯Cappuccino " 香香甜甜 浓郁中带着苦涩 醇和而隽永 …
-
-
-
-## The Longest Way ...
-
-<img src="/img/scenery/about_bg4.jpg" width="350" alt="about_bg4"></img>
-
->  活在当下 然后忘记 继续往前走 ...
->
->  即便是一个人 ...
->
->  On the way to meet myself … -->
-<!-- ## Follow With Interest Blogs
-
-> Neo Peng：https://zhile.io
->
-> 李卫民：https://www.funtl.com/zh/guide
->
-> duanxz：https://www.cnblogs.com/duanxz/tag
->
-> Java1234_小锋：http://blog.java1234.com/index.html
->
-> Deserts：https://deserts.io
->
-> Super Snail：https://www.dusign.net
->
-> KIERAN'S BLOG：https://go.kieran.top
->
-> Mr.Seven：https://itimetraveler.github.io -->
-<h2 id="Contact-me">Contact me</h2>
-<blockquote>
-<p>Email：714363971@qq.com</p>
-</blockquote>
-<h2 id="Treat-me-to-coffee">Treat me to coffee</h2>
-<blockquote>
-<p>If you feel that what I have written is of some value to you, I am glad that you are willing to invite me to drink coffee…</p>
-</blockquote>
-<p><img src="/img/scenery/skm.png" width="350" alt="treat_me_to_coffee.png"></img></p>
-
-
-      <!-- 如果开启评论功能 -->
-      
-      <hr>
-
-      
-
-      
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#Leetcode" title="Leetcode" rel="2">Leetcode</a>
-    
-    
-    
-    <a href="/tags/#GO" title="GO" rel="2">GO</a>
-    
-    
-    
-    <a href="/tags/#微信小程序" title="微信小程序" rel="1">微信小程序</a>
-    
-    
-    
-    <a href="/tags/#云开发" title="云开发" rel="1">云开发</a>
-    
-    
-    
-    <a href="/tags/#Javascript" title="Javascript" rel="1">Javascript</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">about_me</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/github.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>人生是一场游戏，我要当这游戏的头号玩家。</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/xmc1214">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/凌非晨的冬天">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../cn/Leetcode746/">
-      <li>Leetcode746</li>
-    </a>
-    
-    <a href="../cn/%E6%82%A6%E6%8B%8D%E5%B1%8B/">
-      <li>悦拍屋</li>
-    </a>
-    
-    <a href="../cn/Leetcode70/">
-      <li>Leetcode70</li>
-    </a>
-    
-    <a href="../cn/Leetcode509/">
-      <li>Leetcode509</li>
-    </a>
-    
-    <a href="../cn/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/08/">August 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#Algorithm">
-      <li>Algorithm</li>
-    </a>
-    
-    <a href="/categories/#微信小程序">
-      <li>微信小程序</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
