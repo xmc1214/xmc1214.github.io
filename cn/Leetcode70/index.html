@@ -237,9 +237,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
               
               
             </a>
@@ -270,9 +270,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              归档
+              分类
               
               
             </a>
@@ -400,7 +400,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">0</span> In Total
+              Words <span class="post-count">156</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -462,7 +462,13 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        
+        <h2 id="题目标签">题目标签</h2>
+<p>动态规划</p>
+<h2 id="解题思路">解题思路</h2>
+<p>与509.斐波那契数相似，由于每次只能向上走[1]步或者[2]步，所以第[n]阶楼梯只能由第[n-1]阶楼梯或者第[n-2]阶楼梯向上走一步或者两步到达，故只要将到达第[n-1]阶楼梯或和第[n-2]阶楼梯的不同方法相加即是到达第[n]阶楼梯所有的不同方法数</p>
+<h2 id="AC代码">AC代码</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">climbStairs</span><span class="params">(n <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    dp := <span class="built_in">make</span>([]<span class="keyword">int</span>,n + <span class="number">1</span>)</span><br><span class="line">    dp[<span class="number">0</span>],dp[<span class="number">1</span>] = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt;= n; i++ &#123;</span><br><span class="line">        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         <hr>
         <!-- Pager -->
@@ -606,7 +612,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="nav">none</ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A2%98%E7%9B%AE%E6%A0%87%E7%AD%BE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">题目标签</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">解题思路</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AC%E4%BB%A3%E7%A0%81"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">AC代码</span></a></li></ol>
         
         </div>
       </aside>
