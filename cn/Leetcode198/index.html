@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/Leetcode70/">
+  <link rel="canonical" href="http://yoursite-url/cn/Leetcode198/">
   <title>
     
-      Leetcode70 - Coding Of Diary
+      Leetcode198 - Coding Of Diary
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -384,11 +384,11 @@
               <a class="tag" href="/tags/#GO" title="GO">GO</a>
               
             </div>
-            <h1>Leetcode70</h1>
-            <h2 class="subheading">70.爬楼梯</h2>
+            <h1>Leetcode198</h1>
+            <h2 class="subheading"></h2>
             <span class="meta">
               Posted by 凌非晨 on
-              2021-08-23
+              2021-08-27
             </span>
 
 
@@ -400,7 +400,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">156</span> In Total
+              Words <span class="post-count">464</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -465,22 +465,27 @@
         <h2 id="题目标签">题目标签</h2>
 <p>动态规划</p>
 <h2 id="解题思路">解题思路</h2>
-<p>与509.斐波那契数相似，由于每次只能向上走<code>[1]</code>步或者<code>[2]</code>步，所以第<code>[n]</code>阶楼梯只能由第<code>[n-1]</code>阶楼梯或者第<code>[n-2]</code>阶楼梯向上走一步或者两步到达，故只要将到达第<code>[n-1]</code>阶楼梯或和第<code>[n-2]</code>阶楼梯的不同方法相加即是到达第<code>[n]</code>阶楼梯所有的不同方法数</p>
+<p>首先考虑最简单的情况。如果只有一间房屋，则偷窃该房屋，可以偷窃到最高总金额。如果只有两间房屋，则由于两间房屋相邻，不能同时偷窃，只能偷窃其中的一间房屋，因此选择其中金额较高的房屋进行偷窃，可以偷窃到最高总金额。</p>
+<p>如果房屋数量大于两间，应该如何计算能够偷窃到的最高总金额呢？对于第 <code>k(k&gt;2)</code>间房屋，有两个选项：</p>
+<p>偷窃第<code>k</code>间房屋，那么就不能偷窃第<code>k-1</code>间房屋，偷窃总金额为前<code>k-2</code>间房屋的最高总金额与第<code>k</code>间房屋的金额之和。</p>
+<p>不偷窃第<code>k</code>间房屋，偷窃总金额为前<code>k-1</code>间房屋的最高总金额。</p>
+<p>在两个选项中选择偷窃总金额较大的选项，该选项对应的偷窃总金额即为前 kk 间房屋能偷窃到的最高总金额</p>
+<p>用<code>dp[i]</code>表示前<code>i</code>间房屋能偷窃到的最高总金额，那么就有如下的状态转移方程：</p>
+<p><code>dp[i]=max(dp[i−2]+nums[i],dp[i−1])</code></p>
+<p>边界条件为：</p>
+<p><code>dp[0] = nums[0]</code> -&gt; 只有一间房屋，则偷窃该房屋</p>
+<p><code>dp[1] = max(nums[0],nums[1])</code> -&gt; 只有两间房屋，选择其中金额较高的房屋进行偷窃</p>
+<p>最终的答案即为 <code>dp[n−1]</code>，其中<code>n</code>是数组的长度。</p>
 <h2 id="AC代码">AC代码</h2>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">climbStairs</span><span class="params">(n <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    dp := <span class="built_in">make</span>([]<span class="keyword">int</span>,n + <span class="number">1</span>)</span><br><span class="line">    dp[<span class="number">0</span>],dp[<span class="number">1</span>] = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt;= n; i++ &#123;</span><br><span class="line">        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rob</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="params">(ans <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    dp := <span class="built_in">make</span>([]<span class="keyword">int</span>,<span class="built_in">len</span>(nums))</span><br><span class="line">    dp[<span class="number">0</span>] = nums[<span class="number">0</span>]</span><br><span class="line">    dp[<span class="number">1</span>] = max(nums[<span class="number">0</span>],nums[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">2</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        dp[i] = max(dp[i - <span class="number">2</span>] + nums[i],dp[i - <span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="built_in">len</span>(dp) - <span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(i,j <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> i &gt; j &#123;</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> j</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/悦拍屋/" data-toggle="tooltip" data-placement="top" title="悦拍屋">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/Leetcode509/" data-toggle="tooltip" data-placement="top" title="Leetcode509">Next Post &rarr;</a>
+            <a href="/cn/Leetcode746/" data-toggle="tooltip" data-placement="top" title="Leetcode746">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -529,7 +534,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Leetcode70&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Leetcode70/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Leetcode198&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Leetcode198/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -564,7 +569,7 @@
       repo: 'Coding-Of-Diary',
       owner: 'xmc1214',
       admin: 'xmc1214',
-      id: 'Mon Aug 23 2021 11:00:16 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Fri Aug 27 2021 16:06:01 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
