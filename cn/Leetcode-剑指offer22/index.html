@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/">
+  <link rel="canonical" href="http://yoursite-url/cn/Leetcode-剑指offer22/">
   <title>
     
-      Coding Of Diary
+      Leetcode.剑指offer22 - Coding Of Diary
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -290,29 +290,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-      <option value="en" >
-        English
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -364,19 +342,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/pepole.png');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/pepole.png');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/pepole.png'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -398,10 +376,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>代码国度</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">只有0和1的世界</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
+              
+              <a class="tag" href="/tags/#GO" title="GO">GO</a>
+              
+            </div>
+            <h1>Leetcode.剑指offer22</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 凌非晨 on
+              2021-09-02
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">1</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">289</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -442,508 +454,256 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="题目标签">题目标签</h2>
+<p>双指针、链表</p>
+<h2 id="解题思路一">解题思路一</h2>
+<p>第一次遍历计算出链表长度<code>n</code>，第二次遍历至<code>n - k</code>处即为答案</p>
+<h2 id="AC代码一">AC代码一</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getKthFromEnd</span><span class="params">(head *ListNode, k <span class="keyword">int</span>)</span> <span class="params">(kth *ListNode)</span></span> &#123;</span><br><span class="line">    n := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> node := head; node != <span class="literal">nil</span>; node = node.Next &#123;</span><br><span class="line">        n++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> kth = head; n &gt; k; n-- &#123;</span><br><span class="line">        kth = kth.Next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解题思路二">解题思路二</h2>
+<p>使用快慢指针<code>fast</code>、<code>slow</code>进行遍历，快指针<code>fast</code>先遍历至第<code>k + 1</code>个节点,此时两个指针间相差<code>k</code>个节点，然后<code>fast</code>和<code>slow</code>同时向后遍历，当<code>fast</code>指向链表尾部后,<code>slow</code>指针指向倒数第<code>k</code>节点</p>
+<h2 id="AC代码二">AC代码二</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getKthFromEnd</span><span class="params">(head *ListNode, k <span class="keyword">int</span>)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">    fast, slow := head, head</span><br><span class="line">    <span class="keyword">for</span> fast != <span class="literal">nil</span> &amp;&amp; k &gt; <span class="number">0</span> &#123;</span><br><span class="line">        fast = fast.Next</span><br><span class="line">        k--</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> fast != <span class="literal">nil</span> &#123;</span><br><span class="line">        fast = fast.Next</span><br><span class="line">        slow = slow.Next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解题思路三">解题思路三</h2>
+<p>通过<code>for</code>循环遍历链表记录该链表长度，同时将遍历时的首节点<code>start</code>保存至数组<code>ans</code>中，最后返回<code>ans[len(ans) - k]</code></p>
+<h2 id="AC代码三">AC代码三</h2>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getKthFromEnd</span><span class="params">(head *ListNode, k <span class="keyword">int</span>)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">	start := head</span><br><span class="line">	ans := <span class="built_in">make</span>([]*ListNode, <span class="number">0</span>)</span><br><span class="line">	ans = <span class="built_in">append</span>(ans, start)</span><br><span class="line">	count := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> start != <span class="literal">nil</span> &#123;</span><br><span class="line">		start = start.Next</span><br><span class="line">		<span class="keyword">if</span> start != <span class="literal">nil</span> &#123;</span><br><span class="line">			ans = <span class="built_in">append</span>(ans, start)</span><br><span class="line">			count++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans[count-k]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/Leetcode198/" data-toggle="tooltip" data-placement="top" title="Leetcode198">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Leetcode.剑指offer22&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/Leetcode-剑指offer22/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '78fff488587feb5096ce',
+      clientSecret: '2b71165f50fcda2ae0c70b8d899adbf974d8dc28',
+      repo: 'Coding-Of-Diary',
+      owner: 'xmc1214',
+      admin: 'xmc1214',
+      id: 'Thu Sep 02 2021 10:53:04 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: true,
+      language: 'en'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A2%98%E7%9B%AE%E6%A0%87%E7%AD%BE"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">题目标签</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E4%B8%80"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">解题思路一</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AC%E4%BB%A3%E7%A0%81%E4%B8%80"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">AC代码一</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E4%BA%8C"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">解题思路二</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AC%E4%BB%A3%E7%A0%81%E4%BA%8C"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">AC代码二</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E4%B8%89"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">解题思路三</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AC%E4%BB%A3%E7%A0%81%E4%B8%89"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">AC代码三</span></a></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Leetcode-剑指offer22/">
-    <h2 class="post-title">
-      Leetcode.剑指offer22
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      题目标签
-双指针、链表
-解题思路一
-第一次遍历计算出链表长度n，第二次遍历至n - k处即为答案
-AC代码一
-1234567891011func getKthFromEnd(head *ListNode, k int) (kth *ListNode) &#123;    n := 0    for node := head; node != nil; node = node.Next &#1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-09-02
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
-    
-    <a href="/tags/#GO" title="GO">GO</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Leetcode198/">
-    <h2 class="post-title">
-      Leetcode198
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      题目标签
-动态规划
-解题思路
-首先考虑最简单的情况。如果只有一间房屋，则偷窃该房屋，可以偷窃到最高总金额。如果只有两间房屋，则由于两间房屋相邻，不能同时偷窃，只能偷窃其中的一间房屋，因此选择其中金额较高的房屋进行偷窃，可以偷窃到最高总金额。
-如果房屋数量大于两间，应该如何计算能够偷窃到的最高总金额呢？对于第 k(k&gt;2)间房屋，有两个选项：
-偷窃第k间房屋，那么就不能偷窃第k-1间房屋......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-08-27
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
-    
-    <a href="/tags/#GO" title="GO">GO</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Leetcode746/">
-    <h2 class="post-title">
-      Leetcode746
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      题目标签
-动态规划
-解题思路
-在70.爬楼梯的基础上引入了权重，只需在选择的时候加入即可
-AC代码
-1234567891011121314func minCostClimbingStairs(cost []int) int &#123;  dp := make([]int,len(cost))  dp[0],dp[1] = cost[0],cost[1]  for i := 2; i &lt......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-08-23
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/悦拍屋/">
-    <h2 class="post-title">
-      悦拍屋
-    </h2>
-    <h3 class="post-subtitle">
-      校园约拍小程序介绍
-    </h3>
-    <div class="post-content-preview">
-      基于云开发的悦拍屋小程序
-项目介绍
-悦拍屋是一个连接摄影师、摄影爱好者、模特以及普通人的校园摄影 o2o 约拍平台，主要提供全方位、个性化的约拍服务，用户可自主发起约拍或创作需求，通过系统推荐或自主选择符合要求的约拍的对象，与此同时为用户提供自我展示、学习交流、互动娱乐的平台
-项目目录结构
-
-├─cloudfunctions            //云函数文件
-│  ├─authInfoC......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#微信小程序" title="微信小程序">微信小程序</a>
-    
-    <a href="/tags/#云开发" title="云开发">云开发</a>
-    
-    <a href="/tags/#Javascript" title="Javascript">Javascript</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Leetcode70/">
-    <h2 class="post-title">
-      Leetcode70
-    </h2>
-    <h3 class="post-subtitle">
-      70.爬楼梯
-    </h3>
-    <div class="post-content-preview">
-      题目标签
-动态规划
-解题思路
-与509.斐波那契数相似，由于每次只能向上走[1]步或者[2]步，所以第[n]阶楼梯只能由第[n-1]阶楼梯或者第[n-2]阶楼梯向上走一步或者两步到达，故只要将到达第[n-1]阶楼梯或和第[n-2]阶楼梯的不同方法相加即是到达第[n]阶楼梯所有的不同方法数
-AC代码
-12345678func climbStairs(n int) int &#123;    d......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-08-23
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
-    
-    <a href="/tags/#GO" title="GO">GO</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Leetcode509/">
-    <h2 class="post-title">
-      Leetcode509
-    </h2>
-    <h3 class="post-subtitle">
-      509.斐波那契数
-    </h3>
-    <div class="post-content-preview">
-      题目标签
-动态规划
-AC代码
-1234567891011func fib(n int) (ans int) &#123;    first,second := 0,1    if n &lt; 2 &#123;        return n    &#125;    for i := 1; i &lt; n; i++ &#123;        ans = first + second  ......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2021-08-21
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
-    
-    <a href="/tags/#GO" title="GO">GO</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
-    <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      
-移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
-由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
-
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by 凌非晨 on
-    2020-04-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#Leetcode" title="Leetcode">Leetcode</a>
+            
+            <a class="tag" href="/tags/#GO" title="GO">GO</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#Leetcode" title="Leetcode" rel="4">Leetcode</a>
-    
-    
-    
-    <a href="/tags/#GO" title="GO" rel="4">GO</a>
-    
-    
-    
-    <a href="/tags/#微信小程序" title="微信小程序" rel="1">微信小程序</a>
-    
-    
-    
-    <a href="/tags/#云开发" title="云开发" rel="1">云开发</a>
-    
-    
-    
-    <a href="/tags/#Javascript" title="Javascript" rel="1">Javascript</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">about_me</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/github.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>人生是一场游戏，我要当这游戏的头号玩家。</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/xmc1214">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/凌非晨的冬天">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="Leetcode-%E5%89%91%E6%8C%87offer22/">
-      <li>Leetcode.剑指offer22</li>
-    </a>
-    
-    <a href="Leetcode198/">
-      <li>Leetcode198</li>
-    </a>
-    
-    <a href="Leetcode746/">
-      <li>Leetcode746</li>
-    </a>
-    
-    <a href="%E6%82%A6%E6%8B%8D%E5%B1%8B/">
-      <li>悦拍屋</li>
-    </a>
-    
-    <a href="Leetcode70/">
-      <li>Leetcode70</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/08/">August 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#Algorithm">
-      <li>Algorithm</li>
-    </a>
-    
-    <a href="/categories/#微信小程序">
-      <li>微信小程序</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
